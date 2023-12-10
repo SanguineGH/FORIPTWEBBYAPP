@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<div class="text-center">
+    @if (Context.User.Identity.IsAuthenticated)
+    {
+        <br />
+        <h1>Welcome to the Index Page</h1>
+
+        <p>Welcome!, @ViewBag.UserName</p>
+        <p>Your Email are @ViewBag.UserEmail</p>
+        <p>Your Session Key is @ViewBag.SessionKey</p> 
+        <br />
+        <a asp-controller="Login" asp-action="Logout">Logout</a> 
+    }
+</div>
